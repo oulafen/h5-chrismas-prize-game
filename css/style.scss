@@ -1,0 +1,536 @@
+/** base style **/
+@import "mixin";
+@font-face {
+  font-family: 'SansGBW3573194';
+  src: url('../font/SansGBW3.eot');
+  src: url('../font/SansGBW3.eot?#iefix') format('embedded-opentype'),
+  url('../font/SansGBW3.woff') format('woff'),
+  url('../font/SansGBW3.ttf') format('truetype'),
+  url('../font/SansGBW3.svg#SansGBW3') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$bgColor : #dc1830;
+$topCenterWidth: 100%;
+$topCenterHeight: 14rem;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  //max-width: 640px;
+}
+a , a:hover{
+  text-decoration: none;
+}
+html{
+  font-size: 1rem;
+}
+body{
+  background: url('../images/bg.jpg');
+  background-size: cover;
+  box-sizing: border-box;
+  background-color: #dc1830;
+}
+.container{
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  padding-bottom: 3.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'SansGBW3573194';
+
+  .top{
+    height: 7rem;
+    .top-center{
+      background: url('../images/top-center.jpg') no-repeat center 0;
+      background-size: contain;
+      width: $topCenterWidth;
+      height: $topCenterHeight;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+    }
+    &:before{
+      content: '';
+      background: url('../images/top-leaves.png') no-repeat 0 0;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2rem;
+      z-index: 1;
+    }
+    .balloon-box{
+      position: absolute;
+      width: $topCenterWidth;
+      height: $topCenterHeight;
+      background: url('../images/balloon.png') no-repeat center 0;
+      background-size: contain;
+    }
+  }
+  .index-top{
+    height: 14rem;
+  }
+  .rule-top{
+    height: 3rem;
+  }
+  .content-box{
+    background: url("../images/my-prize-bg.png") no-repeat center 100%;
+    background-size: cover;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    .title{
+      display: inline-block;
+      margin: 1rem 0 3rem;
+      padding: 0 1rem;
+      line-height: 2;
+      border: 1px solid #dc1830;
+      color: #dc1830;
+      border-radius: 5px;
+      font-weight: bolder;
+      letter-spacing: 2px;
+    }
+    .table{
+      font-size: 1rem;
+      width: 100%;
+      .tr{
+        color: #990000;
+        line-height: 2.4;
+        &.label{
+          color: #dc1830;
+          font-weight: bolder;
+          line-height: 3;
+        }
+        .td{
+          white-space: nowrap;
+        }
+      }
+    }
+    .desc{
+      color: #990000;
+      margin: 3rem 0 1rem;
+      font-size: .8rem;
+      white-space: nowrap;
+      span{
+        display: block;
+      }
+    }
+  }
+  .rule-box{
+    .title{
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    p{
+      font-size: 1rem;
+      text-align: justify;
+      line-height: 2;
+      color:#990000;
+    }
+    table{
+      color:#dc1830;
+      width: 100%;
+      font-size: 1rem;
+      line-height: 2;
+      text-align: center;
+      border: 1px solid #dc1830;
+      border-bottom:none;
+      margin: .5rem auto;
+      tr{
+        td{
+          border-right: 1px solid #dc1830;
+          border-bottom: 1px solid #dc1830;
+          &:last-child{
+            border-right:none;
+          }
+        }
+      }
+    }
+  }
+  .desc-box{
+    font-size: .8rem;
+    padding: 0 1rem;
+    position: absolute;
+    margin-top: -3rem;
+    width: 100%;
+    .statistical{
+      color: #ffffff;
+      .left{
+        float: left;
+      }
+      .right{
+        float: right;
+      }
+    }
+    .desc{
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      margin-top: 1.5rem;
+    }
+    .notice-board{
+      margin-top: 3rem;
+      font-size: 1rem;
+      .box{
+        display: inline-block;
+        width: 17rem;
+        height: 2.6rem;
+        line-height: 2rem;
+        padding: .3rem 1rem;
+        color: #ffff99;
+        @include bgContain('../images/border-oringe.png');
+      }
+    }
+  }
+  .lottery-outer-box{
+    width: 22.2rem;
+    height: 22.2rem;
+    margin: 3rem auto 0;
+    background: url("../images/lottery-bg.jpg") no-repeat center center;
+    background-size: contain;
+    padding: .6rem;
+    border-radius: 8px;
+    overflow: hidden;
+    tr, td{
+      vertical-align: top;
+    }
+    img{
+      width: 100%;
+    }
+    .lottery-unit{
+      width: 3.5rem;
+      height: 3.5rem;
+      &.active{
+        border: .25rem solid #dc1830;
+      }
+    }
+    .lottery-inner-box{
+      width: 14rem;
+      height: 14rem;
+      overflow: hidden;
+      padding: .5rem ;
+      @include bgContain("../images/lottery-inner-border-bg.png");
+      background-color: #dc1830;
+      .lottery-unit{
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+    }
+    &:after{
+      content: '';
+      width: 18rem;
+      position: absolute;
+      height: 2rem;
+      background: url("../images/prize-box-bottom.png") no-repeat center 0;
+      background-size: contain;
+      left: 50%;
+      margin-left: -9rem;
+      margin-top: .5rem;
+    }
+    .lottery-unit-0{
+      @include lotteryUnitBg(-100% * 0);
+    }
+    .lottery-unit-1{
+      @include lotteryUnitBg(-100% * 1);
+    }
+    .lottery-unit-2{
+      @include lotteryUnitBg(-100% * 2);
+    }
+    .lottery-unit-3{
+      @include lotteryUnitBg(-100% * 3);
+    }
+    .lottery-unit-4{
+      @include lotteryUnitBg(-100% * 4);
+    }
+    .lottery-unit-5{
+      @include lotteryUnitBg(-100% * 5);
+    }
+    .lottery-unit-6{
+      @include lotteryUnitBg(-100% * 6);
+    }
+    .lottery-unit-7{
+      @include lotteryUnitBg(-100% * 7);
+    }
+    .lottery-unit-8{
+      @include lotteryUnitBg(-100% * 8);
+    }
+    .lottery-unit-9{
+      @include lotteryUnitBg(-100% * 9);
+    }
+    .lottery-unit-10{
+      @include lotteryUnitBg(-100% * 10);
+    }
+    .lottery-unit-11{
+      @include lotteryUnitBg(-100% * 11);
+    }
+    .lottery-unit-12{
+      @include lotteryUnitBg(-100% * 12);
+    }
+    .lottery-unit-13{
+      @include lotteryUnitBg(-100% * 13);
+    }
+    .lottery-unit-14{
+      @include lotteryUnitBg(-100% * 14);
+    }
+    .lottery-unit-15{
+      @include lotteryUnitBg(-100% * 15);
+    }
+    .lottery-unit-16{
+      @include lotteryUnitBg(-100% * 16);
+    }
+    .lottery-unit-17{
+      @include lotteryUnitBg(-100% * 17);
+    }
+    .lottery-unit-18{
+      @include lotteryUnitBg(-100% * 18);
+    }
+    .lottery-unit-19{
+      @include lotteryUnitBg(-100% * 19);
+    }
+    .lottery-unit-20{
+      @include lotteryUnitBg(-100% * 20);
+    }
+    .lottery-unit-21{
+      @include lotteryUnitBg(-100% * 21);
+    }
+    .lottery-unit-22{
+      @include lotteryUnitBg(-100% * 22);
+    }
+    .lottery-unit-23{
+      @include lotteryUnitBg(-100% * 23);
+    }
+    .lottery-unit-24{
+      @include lotteryUnitBg(-100% * 24);
+    }
+    .lottery-unit-25{
+      @include lotteryUnitBg(-100% * 25);
+    }
+    .lottery-unit-26{
+      @include lotteryUnitBg(-100% * 26);
+    }
+    .lottery-unit-27{
+      @include lotteryUnitBg(-100% * 27);
+    }
+    .lottery-unit-28{
+      @include lotteryUnitBg(-100% * 28);
+    }
+    .lottery-unit-29{
+      @include lotteryUnitBg(-100% * 29);
+    }
+    .lottery-unit-30{
+      @include lotteryUnitBg(-100% * 30);
+    }
+    .lottery-unit-31{
+      @include lotteryUnitBg(-100% * 31);
+    }
+    .prize-center-box{
+      @include bgContain("../images/lottery-inner-bg.jpg");
+      vertical-align: bottom;
+      .shaking-box{
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        background-color: #ecec48;
+        margin: 0 auto;
+        overflow: hidden;
+        img{
+          width: 2.5rem;
+          margin: .3rem 0 0 0;
+        }
+      }
+    }
+  }
+  .btn-box{
+    width: 90%;
+    padding: 0;
+    margin: 2rem auto 0;
+    height: 2rem;
+    .btn{
+      width: 33.3%;
+      height: 2rem;
+      float: left;
+      img{
+        height: 2rem;
+        width: auto;
+      }
+    }
+    .btn-1{
+      @include bgContain('../images/btn-home.png')
+    }
+    .btn-2{
+      @include bgContain('../images/btn-my-prize.png')
+    }
+    .btn-3{
+      @include bgContain('../images/btn-desc.png')
+    }
+  }
+
+}
+.tip-box{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  display: none;
+  .close{
+    color: #feedd5;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    right: -1.3rem;
+    top: -0.5rem;
+  }
+  .tip{
+    position: absolute;
+    width: 22rem;
+    height: 25.45rem;
+    top: 50%;
+    left: 50%;
+    margin: -15rem 0 0 -11rem;
+    @include bgContain('../images/prize-show-bg.png');
+    text-align: center;
+    .title{
+      @include bgContain('../images/prize-show-title.png');
+      height: 6rem;
+      width: 100%;
+      margin: 4rem 0 2rem;
+    }
+    .notice-box{
+      display: inline-block;
+      line-height: 5rem;
+      width: 15rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      @include bgContain('../images/prize-show-font-bg.png');
+    }
+    .desc{
+      margin-top: 3rem;
+      letter-spacing: 2px;
+      font-size: .9rem;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
+.footer{
+  background: url("../images/bottom.png") no-repeat center 0;
+  background-size: cover;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.shaking{
+  -webkit-animation: shake .8s 0s infinite alternate ease-in-out;
+  -moz-animation: shake .8s 0s infinite alternate ease-in-out;
+  -o-animation: shake .8s 0s infinite alternate ease-in-out;
+  animation: shake .8s 0s infinite alternate ease-in-out;
+}
+
+audio{
+  display: none;
+}
+
+@keyframes shake
+{
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: 50% 100%;
+}
+33% {
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  transform-origin: 50% 100%;
+}
+66% {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+  transform-origin: 50% 100%;
+}
+100% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: 50% 100%;
+}
+}
+
+@-webkit-keyframes shake /* Safari and Chrome */
+{
+0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: 50% 100%;
+}
+33% {
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  transform-origin: 50% 100%;
+}
+66% {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+  transform-origin: 50% 100%;
+}
+100% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: 50% 100%;
+}
+}
+
+
+@media screen and (min-width: 1000px){
+  html{
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 768px){
+  html{
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 414px){
+  html{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 375px){
+  html{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 320px){
+  html{
+    font-size: 12px;
+  }
+  .container{
+    .content-box{
+      .title{
+        margin: 1rem 0 1rem;
+      }
+      .desc{
+        span{
+          display: block;
+        }
+      }
+    }
+  }
+}
